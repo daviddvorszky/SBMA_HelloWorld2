@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HelloWorld2</string>
+    <string name="hello">Hei</string>
+    <string name="click_me">KLIKKAA MINUA</string>
+    <string name="world">Maailma</string>
+</resources>
