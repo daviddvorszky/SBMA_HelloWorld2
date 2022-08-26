@@ -4,4 +4,5 @@
     <string name="hello">Szia</string>
     <string name="click_me">KATTINTS RÁM</string>
     <string name="world">Világ</string>
+    <string name="goodbye">Viszlát Sötét</string>
 </resources>

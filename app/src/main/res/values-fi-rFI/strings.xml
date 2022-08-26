@@ -4,4 +4,5 @@
     <string name="hello">Hei</string>
     <string name="click_me">KLIKKAA MINUA</string>
     <string name="world">Maailma</string>
+    <string name="goodbye">Hyvästi Pimeys</string>
 </resources>
