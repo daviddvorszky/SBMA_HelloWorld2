@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +29,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HelloWorld2(defaultText: String){
     var text by remember { mutableStateOf(defaultText) }
+    var name by remember { mutableStateOf("")}
     var isHello by remember { mutableStateOf(true) }
     val context = LocalContext.current
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -73,12 +75,25 @@ fun HelloWorld2(defaultText: String){
                 .fillMaxHeight()
                 .padding(bottom = 10.dp)
         ) {
-            Button(onClick = {
-                text = if(isHello) context.getString(R.string.goodbye) + "!"
-                    else context.getString(R.string.hello) + " " + context.getString(R.string.world) + "!"
+            TextField(
+                value = name,
+                onValueChange = {name = it},
+                placeholder = { Text("Name") }
+            )
+            Button(
+                onClick = {
 
-                isHello = !isHello
-            }) {
+                    if("".equals(name)) {
+                        text = if (isHello) context.getString(R.string.goodbye) + "!"
+                        else context.getString(R.string.hello) + " " + context.getString(R.string.world) + "!"
+                        isHello = !isHello
+                    }else{
+                        text = context.getString(R.string.hello) + " " + name + "!"
+                    }
+                },
+                modifier = Modifier
+                    .padding(top = 120.dp)
+            ) {
                 Text(stringResource(id = R.string.click_me))
             }
         }
